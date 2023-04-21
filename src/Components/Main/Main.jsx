@@ -7,19 +7,21 @@ function Main() {
   const [inputValue, setInputValue] = useState("");
   const [inputMoney, setInputMoney] = useState();
   const [totalSpend,setTotalSpend] = useState(0);
-
+  let sum=0;
   function handleAdd() {
     if (inputValue && inputMoney) {
       setList([...list, {inputValue,inputMoney}]);
       setInputValue("");
       setInputMoney("");
-      const sum = totalSpend+Number(inputMoney);
+      sum = totalSpend+Number(inputMoney);
       setTotalSpend(sum);
     }
   }
 
-  function handleRemove(index) {
+  function handleRemove(item,index) {
     const newList = [...list];
+    sum = totalSpend-Number(item.inputMoney);
+    setTotalSpend(sum);
     newList.splice(index, 1);
     setList(newList);
   }
@@ -42,7 +44,7 @@ function Main() {
                   <span>{item.inputValue}</span>
                   <span style={{ marginLeft: '800px' }}>{item.inputMoney}</span>
                 </div>
-                <button id="removing" onClick={() => handleRemove(index)}>-</button>
+                <button id="removing" onClick={() => handleRemove(item,index)}>-</button>
             </li>
             ))}
         </ul>
