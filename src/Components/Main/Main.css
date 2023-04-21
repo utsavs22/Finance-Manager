@@ -1,0 +1,52 @@
+.data_entered {
+    list-style: none;
+    padding: 0;
+  }
+  
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5rem 1rem 5rem;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+  
+#removing {
+    background: #eee;
+    border: none;
+    padding: 0.5rem;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+  }
+  
+#removing:hover {
+    background: #ddd;
+  }
+  
+.placetoenter[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+.placetoenter[type="number"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+  
+.placetoenter[type="text"]:focus {
+    outline: none;
+    border-color: blue;
+  }
+.placetoenter[type="number"]:focus {
+    outline: none;
+    border-color: blue;
+  }
+
+.list-container{
+   font-size: 25px;
+}
